@@ -15,6 +15,12 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        def apiKeyFile = rootProject.file("apikey.properties")
+        Properties apiKeyProperties = new Properties()
+        apiKeyProperties.load(new FileInputStream(apiKeyFile))
+
+        buildConfigField("String", "API_KEY", apiKeyProperties['API_KEY'])
     }
 
     buildTypes {
