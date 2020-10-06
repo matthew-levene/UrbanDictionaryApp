@@ -42,7 +42,6 @@ class DefinitionDisplayFragment : Fragment() {
         definitionDisplayViewModel.definitionSuccess.observe(viewLifecycleOwner, {
             it?.let {
                 definitionAdapter.definitionList = it.terms
-                Toast.makeText(requireActivity(), it.terms[0].word, Toast.LENGTH_LONG).show()
             }
 
         })
