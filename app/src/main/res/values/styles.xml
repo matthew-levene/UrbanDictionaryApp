@@ -11,4 +11,8 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="ActionButton" parent="RowText">
+        <item name="android:background">@drawable/pill_shape</item>
+    </style>
+
 </resources>
