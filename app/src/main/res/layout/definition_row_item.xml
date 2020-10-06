@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+        name="definition"
+        type="com.ml.urbandictionaryapp.model.Term" />
+    </data>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,6 +26,7 @@
                 android:textSize="24sp"
                 android:textColor="@android:color/white"
                 tools:text="Definition Name"
+                android:text="@{definition.word}"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -32,6 +39,7 @@
                 android:textSize="18sp"
                 android:textColor="@android:color/white"
                 tools:text="Definition Description"
+                android:text="@{definition.definition}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +60,7 @@
                 android:id="@+id/thumb_up_count_textview"
                 style="@style/RowText"
                 tools:text="100"
+                android:text="@{String.valueOf(definition.thumbs_up)}"
                 app:layout_constraintTop_toBottomOf="@id/thumb_up_imageview"
                 app:layout_constraintStart_toStartOf="@id/thumb_up_imageview"
                 app:layout_constraintEnd_toEndOf="@id/thumb_up_imageview"
@@ -72,6 +81,7 @@
                 android:id="@+id/thumb_down_count_textview"
                 style="@style/RowText"
                 tools:text="100"
+                android:text="@{String.valueOf(definition.thumbs_down)}"
                 app:layout_constraintTop_toBottomOf="@id/thumb_down_imageview"
                 app:layout_constraintStart_toStartOf="@id/thumb_down_imageview"
                 app:layout_constraintEnd_toEndOf="@id/thumb_down_imageview"
