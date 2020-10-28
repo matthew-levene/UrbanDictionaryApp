@@ -1,4 +1,4 @@
-package com.ml.urbandictionaryapp.view
+package com.ml.urbandictionaryapp.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
