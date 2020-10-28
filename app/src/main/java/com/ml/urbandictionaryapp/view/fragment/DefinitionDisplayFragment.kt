@@ -9,12 +9,12 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.ml.urbandictionaryapp.R
 import com.ml.urbandictionaryapp.view.adapter.DefinitionAdapter
-import com.ml.urbandictionaryapp.viewmodel.DefinitionDisplayViewModel
+import com.ml.urbandictionaryapp.viewmodel.TermSearchViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class DefinitionDisplayFragment : Fragment() {
 
-    private val definitionDisplayViewModel:DefinitionDisplayViewModel by viewModel()
+    private val termSearchViewModel:TermSearchViewModel by viewModel()
     private lateinit var definitionAdapter: DefinitionAdapter
 
     override fun onCreateView(
@@ -39,14 +39,14 @@ class DefinitionDisplayFragment : Fragment() {
         }
     }
     private fun setupObservers(){
-        definitionDisplayViewModel.definitionSuccess.observe(viewLifecycleOwner, {
+        termSearchViewModel.definitionSuccess.observe(viewLifecycleOwner, {
             it?.let {
                 definitionAdapter.definitionList = it.terms
             }
 
         })
 
-        definitionDisplayViewModel.definitionError.observe(viewLifecycleOwner, {
+        termSearchViewModel.definitionError.observe(viewLifecycleOwner, {
             Toast.makeText(requireActivity(), it, Toast.LENGTH_LONG).show()
         })
     }

@@ -11,6 +11,9 @@ class TermSearchViewModel(
     private val supervisor = SupervisorJob()
     private val coroutineScope = CoroutineScope(Dispatchers.Main + supervisor)
 
+    val definitionSuccess = termRepository.definitionSuccess
+    val definitionError = termRepository.definitionError
+
     fun findDefinitions(term:String){
         coroutineScope.launch {
             termRepository.getDefinitions(term)
