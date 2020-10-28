@@ -16,4 +16,4 @@ To run this app, you will need to:
 
 If successful the project should have an entry in the BuildConfig class. (Type BuildConfig.API_KEY in source code, if a match is found it was imported successfully)
 
-Gradle has been configured to read a specific file with the above name and contents, so ensure that the naming is exact.ndroid application that uses the Urban Dictionary API to provide Slang to English translations. 
+Gradle has been configured to read a specific file with the above name and contents, so ensure that the naming is exact.
